@@ -1,5 +1,5 @@
 #title           :brp_python_implementation.py
-#description     :Example Python implementation of Boosted Random Planes algorithm (and variants), accompanying the research paper: 'Boosted Random Planes: a Simple Algorithm with Results that Converge in Probability to Hard-Margin SVM Solution' submitted to JMLR. 
+#description     :Example Python implementation of Boosted Random Planes algorithm (and variants), accompanying research paper: 'Boosted Random Planes: a Simple Algorithm with Results that Converge in Probability to Hard-Margin SVM Solution' submitted to JMLR. 
 #author          :Przemysław Klęsk
 #date            :20190819
 #version         :1.0
