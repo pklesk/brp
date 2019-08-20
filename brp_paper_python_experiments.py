@@ -259,3 +259,4 @@ if __name__ == "__main__":
         print("TRAIN ACCURACY: " + str(clf.score(X_train, y_train)) + ".")
         if X_test is not None:
             print("TEST ACCURACY: " + str(clf.score(X_test, y_test)) + ".")
+    print("")
