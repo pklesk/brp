@@ -1,5 +1,5 @@
 #title           :brp_paper_python_experiments.py
-#description     :Python script accompanying research paper: 'Boosted Random Planes: a Simple Algorithm with Results that Converge in Probability to Hard-Margin SVM Solution' submitted to JMLR. 
+#description     :Python script accompanying research paper: "Boosted Random Planes: a Simple Algorithm with Results that Converge in Probability to Hard-Margin SVM Solution" submitted to JMLR. 
 #author          :Przemysław Klęsk (pklesk@wi.zut.edu.pl)
 #date            :20190819
 #version         :1.0
