@@ -1,12 +1,12 @@
-#title           :brp_paper_python_experiments.py
-#description     :Python script accompanying research paper: "Can Boosted Randomness Mimic Learning Algorithms of Geometric Nature? Example of a Simple Algorithm that Converges in Probability to Hard-Margin SVM". 
-#author          :Przemysław Klęsk (pklesk@wi.zut.edu.pl)
-#date            :20190819
-#version         :1.0
-#license         :CC-BY 4.0   
-#notes           :The script allows to repeat experiments related to the specified paper for three SVM solvers (libsvm, liblinear, cvxopt). Experiments shall be reproduced exactly using randomization seed equal 0. 
-#notes           :BRP solvers (brp, brp_fast, brp_logits) are only optional. To reproduce experiments related to them exactly as in paper, a more efficient Mathematica implementation (compiled to C) should be used instead (notebook: brp.nb).
-#acks            :This work was financed by the National Science Centre, Poland. Research project no.: 2016/21/B/ST6/01495.
+# title           :brp_paper_python_experiments.py
+# description     :Python script accompanying research paper: "Can Boosted Randomness Mimic Learning Algorithms of Geometric Nature? Example of a Simple Algorithm that Converges in Probability to Hard-Margin SVM". 
+# author          :Przemysław Klęsk (pklesk@wi.zut.edu.pl)
+# date            :20200825
+# version         :1.1
+# license         :CC-BY 4.0   
+# notes           :The script allows to repeat experiments related to the specified paper for three SVM solvers (libsvm, liblinear, cvxopt). Experiments shall be reproduced exactly using randomization seed equal 0. 
+# notes           :BRP solvers (brp, brp_fast, brp_logits) are only optional. To reproduce experiments related to them exactly as in paper, a more efficient Mathematica implementation (compiled to C) should be used instead (notebook: brp.nb).
+# acks            :This work was financed by the National Science Centre, Poland. Research project no.: 2016/21/B/ST6/01495.
 
 import argparse
 import time
@@ -15,7 +15,7 @@ import csv
 from sklearn.svm import SVC
 from sklearn.svm import LinearSVC
 import cvxopt
-from brp_python_implementation import BoostedRandomPlanes, BoostedRandomPlanesFast, BoostedRandomPlanesLogits
+from brp_python_implementation import BoostedRandomPlanes, BoostedRandomPlanesFast, BoostedRandomPlanesLogits 
 
 def cvxopt_svm(X, y):
     m, n = X.shape
@@ -180,7 +180,7 @@ if __name__ == "__main__":
             print("MARGIN: " + str(np.min(y_train * (np.c_[np.ones((X_train.shape[0], 1)), X_train]).dot(clf_v.T) / np.linalg.norm(clf.coef_))) + ".")        
         print("TRAIN ACCURACY: " + str(clf.score(X_train, y_train)) + ".")
         if X_test is not None:
-            print("TEST ACCURACY: " + str(clf.score(X_test, y_test)) + ".")                        
+            print("TEST ACCURACY: " + str(clf.score(X_test, y_test)) + ".")
     elif args.solver == "liblinear":
         clf = LinearSVC(C=args.C, max_iter=args.max_iter, random_state=args.random_state)
         total_time = 0.0            
